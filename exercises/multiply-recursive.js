@@ -11,6 +11,27 @@
 
 // Your code :
 
+function multiply (number1, number2){
+    let valeur1 = Math.abs(number1)
+    let valeur2 = Math.abs(number2)
+
+    let sum = 0;
+    const countToValeur2 = i => {
+        if (i < valeur2) {
+            sum = sum + valeur1;
+            countToValeur2(i + 1)
+        }
+    }
+    countToValeur2(0)
+
+    if (number1 > 0 && number2 < 0)
+        return -sum;
+        else if (number1 < 0 && number2 > 0)
+        return -sum;
+        else
+        return sum;
+}
+
 //* Begin of tests
 const assert = require('assert')
 
